@@ -16,7 +16,7 @@ Usage
 1. Select the printer in the left menu.
 2. Optionnaly `load_material_shader('first-layer-brush-1.sh')` to keep only the first layer (and adapt the cutting level in it). 
 3. Slice your model.
-4. `sed -r "s/^;\\s*\(.*\)\\s*$//g" <your filename>.gcode > <your filename>.svg`.
+4. `sed -r "/^;\\s*\(.*\)\\s*$/d" <your filename>.gcode > <your filename>.svg`.
 5. Inspect the result (with Inkscape for instance).
 
 Installation
@@ -34,8 +34,7 @@ https://github.com/loic-fejoz/icesl-svg-printer
 
 The best way to contribute is probably one of the following:
 
-* Clone the repo and follow [GitHub
-  Workflow](https://guides.github.com/introduction/flow/index.html).
+* Clone the repo and follow [GitHub Workflow](https://guides.github.com/introduction/flow/index.html).
 * Contact [Me <loic@fejoz.net>](mailto:loic@fejoz.net).
 * Visit Me.
 
