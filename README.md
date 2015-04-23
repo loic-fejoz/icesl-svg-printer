@@ -14,7 +14,7 @@ Usage
 -----
 
 1. Select the printer in the left menu.
-2. Optionnaly `load_material_shader('first-layer-brush-1.sh')` to keep only the first layer (and adapt the cutting level in it). 
+2. Check for proper configuration of brushes. (See installation of the settings file)
 3. Slice your model.
 4. `sed -r "/^;\\s*\(.*\)\\s*$/d" <your filename>.gcode > <your filename>.svg`.
 5. Inspect the result (with Inkscape for instance).
@@ -24,6 +24,13 @@ Installation
 
 1. `cd <your IceSL path>/gcode`
 2. `git clone git@github.com:loic-fejoz/icesl-svg-printer.git`
+3. copy [settings_icesl-svg-printer.xml](https://raw.githubusercontent.com/loic-fejoz/icesl-svg-printer/master/settings_icesl-svg-printer.xml) in
+ - the bin folder if you run MS/Windows,
+ - ~/.icesl/ directory if you run on Linux.
+
+Troubleshooting
+---------------
+You may need to disable shield plugin to avoid segmentation fault.
 
 Contribute
 ----------
@@ -37,10 +44,6 @@ The best way to contribute is probably one of the following:
 * Clone the repo and follow [GitHub Workflow](https://guides.github.com/introduction/flow/index.html).
 * Contact [Me <loic@fejoz.net>](mailto:loic@fejoz.net).
 * Visit Me.
-
-What needs to be done:
-
-* Interpret extrusion command for pen up or down.
 
 Authors
 -------
