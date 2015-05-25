@@ -33,8 +33,6 @@ function layer_start(zheight)
    layer_counter = layer_counter + 1
    if (layer_counter <= layer_max) then
       output('<g id="layer' .. f(zheight) .. '">')
-      output('<path style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" ')
-      output('d="')
    end
 end
 
@@ -71,8 +69,17 @@ end
 function swap_tool(from,to,x,y,z)
 end
 
+in_path = false
 function move_xy_cmd(x,y,cmd)
    if (layer_counter <= layer_max) then
+      if cmd == 'M' then
+	 if in_path then
+	    output('" />')
+	 end
+	 output('<path style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" ')
+	 output('d="')
+	 in_path = true
+      end
       output(cmd .. ' ' .. f(x+bed_center_x) .. ',' .. f(y+bed_center_y) .. ' ')
    end
 end
