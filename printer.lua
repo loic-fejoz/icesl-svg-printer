@@ -32,7 +32,9 @@ end
 function layer_start(zheight)
    layer_counter = layer_counter + 1
    if (layer_counter <= layer_max) then
-      output('<g id="layer' .. f(zheight) .. '">')
+      local layer_name = 'layer' .. f(zheight) .. '(' .. layer_counter .. ')'
+      local layer_id = 'layer' .. layer_counter
+      output('<g id="' .. layer_id  .. '" inkscape:groupmode="layer" inkscape:label="' .. layer_name.. '" >')
    end
 end
 
