@@ -15,9 +15,8 @@ Usage
 
 1. Select the printer in the left menu.
 2. Check for proper configuration of brushes. (See installation of the settings file)
-3. Slice your model.
-4. `sed -r "/^;\\s*\(.*\)\\s*$/d" <your filename>.gcode > <your filename>.svg`.
-5. Inspect the result (with Inkscape for instance).
+3. Slice your model and save as an SVG file.
+4. Inspect the result (with Inkscape for instance).
 
 Installation
 ------------

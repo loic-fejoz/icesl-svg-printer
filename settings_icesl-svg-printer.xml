@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <feed_rate_mm_per_sec value="35" />
 <min_sec_per_perimeter value="1" />
-<nozzle_width_mm value="-0.2" />
+<nozzle_width_mm value="-0.05" />
 <travel_rate_mm_per_sec value="110" />
 <perimeter_mm_per_sec value="35" />
 <xy_mm_per_pixels value="0.05" />
