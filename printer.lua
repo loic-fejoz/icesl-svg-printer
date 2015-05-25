@@ -5,10 +5,24 @@ layer_max = 1
 tool_e = 0
 tool_e_restart = 0
 layer_counter = 0
+before_header_comment = ''
+header_has_been_printed = false
+
+function comment(text)
+   local cmt = '<!-- ' .. text .. ' -->'
+   if header_has_been_printed then
+      output(cmt)
+   else
+      before_header_comment = before_header_comment .. cmt
+   end
+end
 
 function header()
   h = file('header.svg')
   output(h)
+  header_has_been_printed = true
+  output(before_header_comment)
+  before_header_comment = ''
 end
 
 function footer()
